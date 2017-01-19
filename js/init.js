@@ -4,7 +4,7 @@ $(function() {
 	window.isSmall = $(window).width() <= 600;
     window.pathArray = window.location.pathname.split( '/' );
     window.onLandingPage = 0;
-        
+
     initEffects();
     initSideNav();
     initStickyHeader();
@@ -17,26 +17,22 @@ function initEffects() {
    		var scrolledY = $(window).scrollTop();
 		$('#hero .img-wrapper').css('bottom','-'+((scrolledY*0.1))+'px');
    	}
-   	
+
    	if(!window.isSmall) {
 	    $(window).bind('scroll',function(e){
 	        parallaxScroll();
 	    });
    	}
-    
+
     // Slide In Top Level Menu
     $(".button-collapse").sideNav();
-    
-    // Generel Parallax Effect 
+
+    // Generel Parallax Effect
     $('.parallax').parallax();
-    
-  
-    // Code Syntax Highlighting
-    hljs.initHighlightingOnLoad();
-    
+
     // Striped Tables
     $('section#documentation table').addClass('striped');
-    
+
     // Linkable Headers
     $('body.documentation section#documentation h2, body.documentation section#documentation h3').click(function(event) {
 		var id = $(event.target).attr('id');
@@ -46,7 +42,7 @@ function initEffects() {
 
 function initStickyHeader() {
     var stickyHeaderPosition = !window.onLandingPage ? 1 : LANDING_PAGE_HERO_HEIGHT;
-    
+
     $(window).scroll(function() {
         if ($(this).scrollTop() > stickyHeaderPosition) {
             $('#header').addClass("sticky");
@@ -55,7 +51,7 @@ function initStickyHeader() {
             $('#header').removeClass("sticky");
             $('#header').removeClass("z-depth-1");
         }
-    }); 
+    });
 }
 
 function initSideNav() {
@@ -81,11 +77,11 @@ function initSideNav() {
     // Sticky SideNav
     if(!window.onLandingPage) {
         var isSmall = $(window).width() <= 600;
-        
+
         if(!isSmall) {
             // $('section ul.nav').sticky({topSpacing: 100});
         }
-        
+
         $( window ).resize(function() {
             var isSmall = $(window).width() <= 600;
             if(isSmall) {
@@ -99,7 +95,7 @@ function initSideNav() {
 
 function getLinkUrl() {
     var linkUrl = '';
-    for (i = 1; i < pathArray.length; i++) { 
+    for (i = 1; i < pathArray.length; i++) {
         var pathSegment = pathArray[i];
         if(pathSegment!='') {
 			linkUrl += "/" + pathSegment;

@@ -8,4 +8,8 @@ github_username:  openhab
 permalink: /404.html
 # Build settings
 markdown: kramdown
-exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md"]
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "Vagrantfile"]
